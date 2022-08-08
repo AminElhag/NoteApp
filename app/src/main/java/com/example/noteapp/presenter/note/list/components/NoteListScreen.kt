@@ -1,5 +1,6 @@
 package com.example.noteapp.presenter.note.list.components
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,17 +13,20 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.noteapp.R
+import com.example.noteapp.core.TestTags
 import com.example.noteapp.domain.note.model.Note
 import com.example.noteapp.presenter.note.Screens
 import com.example.noteapp.presenter.note.list.NoteEvent
 import com.example.noteapp.presenter.note.list.NoteListViewModel
 import kotlinx.coroutines.launch
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun NoteListScreen(
     navController: NavController,
@@ -69,7 +73,8 @@ fun NoteListScreen(
                 ToggleOrderSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
+                        .padding(16.dp)
+                        .testTag(TestTags.TOGGLE_ORDER_SECTION),
                     noteOrder = state.value.noteOrder,
                     onOrderChange = {
                         viewModel.onEvent(NoteEvent.Order(it))
