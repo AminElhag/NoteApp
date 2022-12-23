@@ -1,6 +1,6 @@
 <h1 align="center">Note App</h1>
 <p align="center">  
-🗡️ Pokedex demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
+🗡️ NoteApp modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
 </p>
 </br>
 <p align="center">
